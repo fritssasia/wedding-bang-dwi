@@ -83,7 +83,7 @@
 .elementor-417 .elementor-element.elementor-element-e69377d:not(.elementor-motion-effects-element-type-background),
 .elementor-417 .elementor-element.elementor-element-e69377d>.elementor-motion-effects-container>.elementor-motion-effects-layer {
     background-image: url("../img/cover/cover-depan.jpg");
-    background-position: center center;
+    background-position: center;
     background-size: cover;
 }
 
