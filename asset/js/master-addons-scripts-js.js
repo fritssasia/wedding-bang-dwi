@@ -2283,47 +2283,7 @@
         },
 
 
-        // Master Addons: Countdown Timer
-        MA_CountdownTimer: function ($scope, $) {
-
-            var $countdownWidget = $scope.find(".jltma-widget-countdown");
-            $.fn.MasterCountDownTimer = function () {
-                var $wrapper = $(this).find(".jltma-countdown-wrapper"),
-                    data = {
-                        year: $wrapper.data("countdown-year"),
-                        month: $wrapper.data("countdown-month"),
-                        day: $wrapper.data("countdown-day"),
-                        hour: $wrapper.data("countdown-hour"),
-                        min: $wrapper.data("countdown-min"),
-                        sec: $wrapper.data("countdown-sec")
-                    },
-
-                    targetDate = new Date(data.year, data.month, data.day, data.hour, data.min, data.sec);
-                var $year = $wrapper.find('.jltma-countdown-year'),
-                    $month = $wrapper.find('.jltma-countdown-month'),
-                    $day = $wrapper.find('.jltma-countdown-day'),
-                    $hour = $wrapper.find('.jltma-countdown-hour'),
-                    $min = $wrapper.find('.jltma-countdown-min'),
-                    $sec = $wrapper.find('.jltma-countdown-sec');
-
-                setInterval(function () {
-                    var diffTime = (Date.parse(targetDate) - Date.parse(new Date())) / 1000;
-
-                    if (diffTime < 0) return;
-
-                    $year.text(Math.floor(diffTime / (31536000))); // 1 year = 3153600 second
-                    $month.text(Math.floor((diffTime / 2592000) % 12)); // 1 month = 2592000 second
-                    $day.text(Math.floor((diffTime / 86400) % 365)); // 1 day = 86400 second
-                    $hour.text(Math.floor((diffTime / 3600) % 24)); // 1 hour = 3600 second
-                    $min.text(Math.floor((diffTime / 60) % 60)); // 1 min  = 60 second
-                    $sec.text(Math.floor((diffTime) % 60));
-                }, 1e3)
-            }, $countdownWidget.each(function () {
-                $(this).MasterCountDownTimer()
-            })
-
-
-        },
+        
 
         /**
          * Fancybox popup
@@ -2971,7 +2931,6 @@
         elementorFrontend.hooks.addAction('frontend/element_ready/ma-image-carousel.default', Master_Addons.MA_Image_Carousel);
         elementorFrontend.hooks.addAction('frontend/element_ready/ma-blog-post.default', Master_Addons.MA_Blog);
         elementorFrontend.hooks.addAction('frontend/element_ready/ma-news-ticker.default', Master_Addons.MA_NewsTicker);
-        elementorFrontend.hooks.addAction('frontend/element_ready/ma-el-countdown-timer.default', Master_Addons.MA_CountdownTimer);
         elementorFrontend.hooks.addAction('frontend/element_ready/jltma-counter-up.default', Master_Addons.MA_Counter_Up);
         elementorFrontend.hooks.addAction('frontend/element_ready/ma-piecharts.default', Master_Addons.MA_PiechartsHandler);
         elementorFrontend.hooks.addAction('frontend/element_ready/ma-timeline.default', Master_Addons.MA_Timeline);

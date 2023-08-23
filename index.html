@@ -349,12 +349,39 @@ Mr. (Alm) Wartomo Arsimen<br>
 				<div class="elementor-widget-container">
 			<h2 class="elementor-heading-title elementor-size-default">Counting Down</h2>		</div>
 				</div>
-				<div class="elementor-element elementor-element-ec413e elementor-countdown--label-block jltma-glass-effect-no elementor-invisible elementor-widget elementor-widget-countdown" data-id="ec413e" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:500}" data-widget_type="countdown.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-countdown-wrapper" data-date="1703995200">
-			<div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-days"></span> <span class="elementor-countdown-label">Days</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-hours"></span> <span class="elementor-countdown-label">Hours</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-minutes"></span> <span class="elementor-countdown-label">Minutes</span></div><div class="elementor-countdown-item"><span class="elementor-countdown-digits elementor-countdown-seconds"></span> <span class="elementor-countdown-label">Seconds</span></div>		</div>
+				
+				<div class="countdown" id="countdown">
+					<span id="days"></span>
+					<span id="hours"></span>
+					<span id="minutes"></span>
+					<span id="seconds"></span>
 				</div>
-				</div>
+				<script>
+					// Tanggal dan waktu pernikahan
+					const weddingDate = new Date("2023-08-25T08:00:00+08:00").getTime();
+
+					// Memperbarui hitungan mundur setiap 1 detik
+					const countdownInterval = setInterval(function () {
+						const now = new Date().getTime();
+						const timeLeft = weddingDate - now;
+
+						if (timeLeft > 0) {
+							const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+							const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+							const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+							const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+							document.getElementById("days").innerHTML = `${days} hari`;
+							document.getElementById("hours").innerHTML = `${hours} jam`;
+							document.getElementById("minutes").innerHTML = `${minutes} menit`;
+							document.getElementById("seconds").innerHTML = `${seconds} detik`;
+						} else {
+							clearInterval(countdownInterval);
+							document.getElementById("countdown").innerHTML = "Pernikahan telah dimulai!";
+						}
+					}, 1000);
+				</script>
+
 				<div class="elementor-element elementor-element-cfd66a2 elementor-align-center jltma-glass-effect-no elementor-invisible elementor-widget elementor-widget-button" data-id="cfd66a2" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:500}" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 					<!-- <div class="elementor-button-wrapper">
@@ -436,12 +463,10 @@ Desa Modayag<br></div>
 								</div>
 					</div>
 		</section>
-				<div class="elementor-element elementor-element-59c2012 jltma-glass-effect-no elementor-invisible elementor-widget elementor-widget-video" data-id="59c2012" data-element_type="widget" data-settings="{&quot;youtube_url&quot;:&quot;https:\/\/www.youtube.com\/watch?v=NpEaa2P7qZI&quot;,&quot;_animation&quot;:&quot;fadeIn&quot;,&quot;_animation_delay&quot;:500,&quot;video_type&quot;:&quot;youtube&quot;,&quot;controls&quot;:&quot;yes&quot;}" data-widget_type="video.default">
-				<div class="elementor-widget-container">
-					<div class="elementor-wrapper elementor-open-inline">
-			<div class="elementor-video"></div>		</div>
-				</div>
-				</div>
+				<video controls>
+					<source src="asset/video/video.mp4" type="video/webm" />
+					Browsermu tidak mendukung tag video
+				</video>
 						</div>
 					</div>
 		</div>

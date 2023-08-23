@@ -81,6 +81,15 @@ body.rtl .elementor-154 .elementor-element.elementor-element-ddab782 {
     background-size: cover;
 }
 
+#countdown {
+    font-family: "Roboto", Sans-serif;
+    display: inline-block;
+    margin: 0 auto;
+    font-weight: 600;
+    color: #F3F3F3;
+    font-size: 2em;
+}
+
 .elementor-154 .elementor-element.elementor-element-d604761 .elementor-repeater-item-255ec51 .elementor-background-overlay {
     background-color: #00000052;
 }
